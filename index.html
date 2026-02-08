@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Baby ❤️</title>
+    <title>wala lang</title>
     <style>
         body {
             background-color: #e6e6ff;
@@ -49,17 +49,17 @@
 </head>
 <body>
 
-<audio id="bgMusic" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+<audio id="happyMusic">
+    <source src="https://www.myinstants.com/media/sounds/happy-happy-happy-song.mp3" type="audio/mpeg">
 </audio>
 
 <div class="card">
-    <img id="displayImg" src="https://giphy.com/gifs/6hKL8BI8rRNrMRFtAx" alt="Cat">
-    <h1 id="text">Hi Idol</h1>
+    <img id="displayImg" src="https://media.giphy.com/media/6hKL8BI8rRNrMRFtAx/giphy.gif" alt="Cat">
+    <h1 id="text">Hi Claire</h1>
     
     <div class="btn-container">
-        <button id="mainBtn" class="btn" onclick="nextStep()">TAP ME</button>
-        <button id="noBtn" class="btn" onmouseover="moveNo()">NO</button>
+        <button id="mainBtn" class="btn" onclick="nextStep()">tap tap</button>
+        <button id="noBtn" class="btn" onmouseover="moveNo()">No</button>
     </div>
 </div>
 
@@ -69,26 +69,21 @@
     const textElement = document.getElementById('text');
     const mainBtn = document.getElementById('mainBtn');
     const noBtn = document.getElementById('noBtn');
-    const music = document.getElementById('bgMusic');
+    const happyMusic = document.getElementById('happyMusic'); // Reference to the audio
 
     const steps = [
-        { text: "SOOOOOOOOOOOO... <br> .....", img: "https://giphy.com/gifs/vday-february-14-just-for-you-wvYNSqBAMDVx8CEYkt", btn: "SO WHAT!" },
-        { text: "Valentines is so so so so so malapit na right?!", img: "https://giphy.com/gifs/funny-meme-cursed-muhehehehe-LBb735fuQwRKAVzN23", btn: "Kaya nga eh" },
-        { text: "Gusto mo ba humabol idol?", img: "https://giphy.com/gifs/cats-memes-funny-cat-pY8jLmZw0ElqvVeRH4", btn: "Paano?" },
-        { text: "Will you be my valentine?", img: "https://giphy.com/gifs/cats-memes-funny-cat-pY8jLmZw0ElqvVeRH4", btn: "YES!" }
+        { text: "soooooooooooooo... <br> .....", img: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2d3YWR4djliMnAzb3U3bWVseTc1a2RubTNxamlvM2tpeThlNnlweCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/BNlSrpW0e4nbgVZ2we/giphy.gif", btn: "So what!" },
+        { text: "Valentines is so so so so so malapit na right?!", img: "https://media.giphy.com/media/LBb735fuQwRKAVzN23/giphy.gif", btn: "Kaya nga eh" },
+        { text: "Gusto mo ba humabol idol?", img: "https://media.giphy.com/media/pY8jLmZw0ElqvVeRH4/giphy.gif", btn: "Paano?" },
+        { text: "Will you be my valentine?", img: "https://media.giphy.com/media/pY8jLmZw0ElqvVeRH4/giphy.gif", btn: "Yes!" }
     ];
 
     function nextStep() {
-        if (step === 0) {
-            music.play();
-        }
-
         if (step < steps.length) {
             textElement.innerHTML = steps[step].text;
             imgElement.src = steps[step].img;
             mainBtn.innerHTML = steps[step].btn;
             
-            // Show NO button ONLY on the last step (Valentine Question)
             if (step === 3) {
                 noBtn.style.display = 'block';
                 noBtn.style.position = 'relative';
@@ -99,17 +94,20 @@
             }
             step++;
         } else {
-            textElement.innerHTML = "YEHEY";
-            imgElement.src = "https://giphy.com/gifs/cat-dance-brown-ambush-rasel-gazi-TjSPQgowhhJdHgvnwA";
+            // YEHEY screen
+            textElement.innerHTML = "yon ohhh ";
+            imgElement.src = "https://media.giphy.com/media/TjSPQgowhhJdHgvnwA/giphy.gif";
             mainBtn.style.display = 'none';
             noBtn.style.display = 'none';
+            
+            // Play the music
+            happyMusic.play();
         }
     }
 
     function moveNo() {
-        // Change text and image to "PLEASE" when they try to click NO
-        textElement.innerHTML = "PLEASE??? 🥺<br>Sige na idol!";
-        imgElement.src = "https://giphy.com/gifs/6hKL8BI8rRNrMRFtAx"; // Using your first link as the please cat
+        textElement.innerHTML = "pleaseee??? <br>Sige na ohhh!";
+        imgElement.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2d3YWR4djliMnAzb3U3bWVseTc1a2RubTNxamlvM2tpeThlNnlweCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/901mxGLGQN2PyCQpoc/giphy.gif"; 
         
         noBtn.style.position = 'fixed';
         const x = Math.random() * (window.innerWidth - 100);
@@ -121,3 +119,6 @@
 
 </body>
 </html>
+
+
+
